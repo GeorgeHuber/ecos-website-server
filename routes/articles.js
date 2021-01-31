@@ -8,6 +8,18 @@ router.route('/').get((req, res) => {
       .catch(err => res.status(400).json('Error: ' + err));
   });
 
+router.route('/carousel').get((req, res) => {
+    
+    Article.find({Id:"carousel"})
+        .then(articles => res.json(articles))
+        .catch(err => res.status(400).json('Error: ' + err));
+    });
+
+router.route('/actions').get((req, res) => {    
+      Article.find({Id:"action"})
+          .then(articles => res.json(articles))
+          .catch(err => res.status(400).json('Error: ' + err));
+      });
 
 router.route('/get').get((req, res) => {
   const id=req.query.id;
@@ -15,5 +27,7 @@ router.route('/get').get((req, res) => {
       .then(article => res.json(article))
       .catch(err => res.status(400).json('Error: ' + err));
   });
+
+
 
   module.exports=router
