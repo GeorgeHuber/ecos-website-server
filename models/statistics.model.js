@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const statisticsSchema = new Schema({
     
-        Statistics:[]
+        
 },{
     timestamps:true
 })
