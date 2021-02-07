@@ -19,10 +19,16 @@ connection.once('open', ()=>{
 })
 
 const articleRouter = require('./routes/articles');
-
-
 app.use('/articles',articleRouter);
 
+const membersRouter = require('./routes/members');
+app.use('/members',membersRouter);
+
+const statisticsRouter = require('./routes/statistics');
+app.use('/statistics',statisticsRouter);
+
+const quotesRouter = require('./routes/quotes');
+app.use('/quotes',quotesRouter);
 
 app.listen(port, ()=>{
     console.log(`Server is running on port: ${port}`);
